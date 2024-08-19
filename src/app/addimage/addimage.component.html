@@ -1,0 +1,32 @@
+<div class="container">
+<h1>Add popular Thing</h1>
+<form (ngSubmit)="addimage()">
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Name</label>
+    <input type="email" class="form-control" name="name" [(ngModel)]="newCrud.name" id="exampleFormControlInput1" placeholder="Add Name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea2" class="form-label">About</label>
+    <textarea class="form-control" name="about" [(ngModel)]="newCrud.about" id="exampleFormControlTextarea2" rows="3" placeholder="Description"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput3" class="form-label">Image</label>
+    <!--  <input type="email" class="form-control" name="image" [(ngModel)]="newCrud.image" id="exampleFormControlInput3" placeholder="Image">  -->
+   <br>
+    <input type="file" name="image" [(ngModel)]="newCrud.image" (change)="onUpload($event)">
+
+  </div>
+ <button type="submit" class="button btn btn-primary">Submit</button>
+</form>
+<br>
+<div class="col-7">
+
+ <img src="{{this.base64}}" width="200px">
+ <br>
+ <h3>{{newCrud.name}}</h3>
+ <p>{{newCrud.about}}</p>
+
+</div>
+
+</div>

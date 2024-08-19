@@ -1,0 +1,69 @@
+<h1>Client {{name2}}</h1>
+<div class="container mt-5" *ngIf="clientFlag">
+    <h2 class="text-center mb-4">Client Details</h2>
+    <form (ngSubmit)="onSubmit()" #clientForm="ngForm">
+      <div class="mb-3">
+        <label for="clientName" class="form-label">Client Name *</label>
+        <input type="text" id="clientName" class="form-control" name="clientName" required [(ngModel)]="clientObject.name">
+      </div>
+      <div class="mb-3">
+        <label for="company" class="form-label">Company *</label>
+        <input type="text" id="company" class="form-control" name="company" required [(ngModel)]="clientObject.company">
+      </div>
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input type="text" id="title" class="form-control" name="title" [(ngModel)]="client.title">
+      </div>
+      <div class="mb-3">
+        <label for="department" class="form-label">Department *</label>
+        <select id="department" class="form-select" name="department" required [(ngModel)]="client.department">
+          <option value="" disabled>Select</option>
+          <option *ngFor="let dept of departments" [value]="dept">{{dept}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Preferred contact method *</label><br>
+        <input type="radio" id="email" name="preferredContactMethod" value="Email" required [(ngModel)]="client.preferredContactMethod">
+        <label for="email">Email</label>
+        <input type="radio" id="phone" name="preferredContactMethod" value="Phone" required [(ngModel)]="client.preferredContactMethod">
+        <label for="phone">Phone</label>
+      </div>
+      <div class="mb-3">
+        <label for="companyAddress" class="form-label">Company address *</label>
+        <input type="text" id="companyAddress" class="form-control mb-2" placeholder="Street Address" name="streetAddress" required [(ngModel)]="client.streetAddress">
+        <input type="text" class="form-control mb-2" placeholder="Address Line 2" name="addressLine2" [(ngModel)]="client.addressLine2">
+        <input type="text" class="form-control mb-2" placeholder="City" name="city" [(ngModel)]="client.city">
+        <input type="text" class="form-control mb-2" placeholder="State/Region/Province" name="state" [(ngModel)]="client.state">
+        <input type="text" class="form-control mb-2" placeholder="Postal / Zip Code" name="postalCode" [(ngModel)]="client.postalCode">
+        <input type="text" class="form-control mb-2" placeholder="Country" name="country" [(ngModel)]="client.country">
+      </div>
+      <div class="mb-3">
+        <label for="companyWebsite" class="form-label">Company website *</label>
+        <input type="url" id="companyWebsite" class="form-control" name="companyWebsite" required [(ngModel)]="client.companyWebsite">
+      </div>
+      <div class="mb-3">
+        <label for="companyLogo" class="form-label">Company logo</label>
+        <input type="file" id="companyLogo" class="form-control" name="companyLogo" (change)="onFileSelected($event)">
+      </div>
+      <div class="mb-3">
+        <label for="workingHours" class="form-label">Working Hours *</label>
+        <input type="text" id="workingHours" class="form-control" name="workingHours" required [(ngModel)]="client.workingHours">
+      </div>
+      <div class="mb-3">
+        <label for="workingDays" class="form-label">Working Days *</label>
+        <input type="text" id="workingDays" class="form-control" name="workingDays" required [(ngModel)]="client.workingDays">
+      </div>
+      <div class="mb-3">
+        <label for="billingCycle" class="form-label">Billing Cycle *</label>
+        <input type="date" id="billingCycle" class="form-control" name="billingCycle" required [(ngModel)]="client.billingCycle">
+      </div>
+      <div class="mb-3">
+        <label for="additionalInfo" class="form-label">Additional Information</label>
+        <textarea id="additionalInfo" class="form-control" name="additionalInfo" rows="3" [(ngModel)]="client.additionalInfo"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+
+  
+  

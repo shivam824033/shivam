@@ -1,0 +1,7 @@
+<button class="btn btn-danger my-4" routerLink="dashboard">Go To Dashboard</button>
+<button class="btn btn-danger my-4" routerLink="clientForm">Go To Client Form</button>
+<h1> parent {{object.name}}</h1>
+<h2>{{object.company}}</h2>
+<app-client-details (valueChanged)="dummyParent($event)"
+[name2]="name1"
+></app-client-details>

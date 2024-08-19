@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Update data</h1>
+    <form [formGroup]="updatedata" (ngSubmit)="editimage()">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="email" class="form-control" name="name" formControlName="name" id="exampleFormControlInput1" placeholder="Edit Name">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea2" class="form-label">About</label>
+        <textarea class="form-control" name="about" formControlName="about" id="exampleFormControlTextarea2" rows="3"></textarea>
+      </div>
+    
+      <div class="mb-3">
+        <label for="exampleFormControlInput3" class="form-label">Image</label>
+        <!-- <input type="email" class="form-control" name="image" formControlName="image" id="exampleFormControlInput3" placeholder="Image"> -->
+      <br>
+         
+        <input type="file" class="form-control" name="image" id="exampleFormControlInput3" (change)="onUpload($event)">
+    </div>
+     <button type="submit" class="button btn btn-primary">Submit</button>
+    </form>
+    <br>
+
+    <div class="col-7">
+
+      <img src="{{this.finalimage}}" width="200px">
+  </div>
+    
+    </div>
+
+    
+    
+

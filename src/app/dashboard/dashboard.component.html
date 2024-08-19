@@ -1,0 +1,30 @@
+<div class="container">
+    <button class="btn btn-danger my-4" routerLink="">Home</button> <br>
+    <button class="btn btn-primary my-4" (click)="gotoadd()" >+ Add Popular Thing</button>
+   <h1>Dashboard</h1>
+   <table class="table table-hover table-dark">
+    <thead>
+      <tr>
+    
+        
+        <th scope="col">Name</th>
+        <th scope="col">About</th>
+        <th scope="col">Image</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let x of allData">
+        
+        <td>{{x.name}}</td>
+        <td>{{x.about}}</td>
+        <td><img src="{{x.image}}" width="200px" ></td>
+        <td><button class="btn btn-warning mx-1" (click)="gotoEdit(x.id)" >edit</button><button class="btn btn-danger mx-1" (click)="deleteData(x.id)" >Delete</button></td>
+
+      </tr>
+    </tbody>
+   </table>
+
+</div>
